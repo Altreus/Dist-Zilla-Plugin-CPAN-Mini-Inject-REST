@@ -61,7 +61,7 @@ uploads to a L<CPAN::Mini> mirror. This one expects that the remote is a
 L<CPAN::Mini::Inject::REST> server, since it uses
 L<CPAN::Mini::Inject::REST::Client::API> to do it.
 
-=ATTRIBUTES
+=head1 ATTRIBUTES
 
 This plugin extends L<CPAN::Mini::Inject::REST::Client::API> and therefore all of its properties can be provided. A summary:
 
