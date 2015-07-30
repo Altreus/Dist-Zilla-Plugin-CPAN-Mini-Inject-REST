@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Dist::Zilla::Plugin::CPAN::Mini::Inject::REST;
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 use Moose;
 use Data::Dump;
