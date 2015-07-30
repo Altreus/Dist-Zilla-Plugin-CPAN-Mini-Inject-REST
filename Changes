@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+0.002     2015-07-30 15:34:16 BST
+
   - Use @Author::ALTREUS
   - Actually release to CPAN
 
