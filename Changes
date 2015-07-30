@@ -1,5 +1,8 @@
 {{$NEXT}}
 
+  - Use @Author::ALTREUS
+  - Actually release to CPAN
+
 0.001     2015-07-24 18:07:55+01:00 Europe/London
 
   - First release
