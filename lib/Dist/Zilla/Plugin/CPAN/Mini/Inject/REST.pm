@@ -16,6 +16,16 @@ has '+protocol' => ( default => 'http' );
 sub release {
     my ($self, $archive) = @_;
 
+    if($ENV{ALREADY_UPLOADED_PRETEND_THIS_HAPPENED_ALREADY})
+    {
+        # sometimes the CPAN::Mini::Inject::REST reports an error
+        # despite successfully uploading and indexing a distribution.
+        # this leaves us in an awkward state as we can't re-upload it
+        # and we need this step to pass to get the rest of the release
+        # tasks accomplished.
+        $self->log("Pretending we succesfully uploaded $archive");
+        return;
+    }
     $self->log_debug(sprintf "Sending %s to %s://%s:%d", $archive, $self->protocol, $self->host, $self->port);
 
     my ($code, $result) = $self->post(
