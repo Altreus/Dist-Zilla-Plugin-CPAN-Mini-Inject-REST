@@ -43,7 +43,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::CPAN::Mini::Inject::REST" : {
          "file" : "lib/Dist/Zilla/Plugin/CPAN/Mini/Inject/REST.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       }
    },
    "release_status" : "stable",
@@ -58,7 +58,7 @@
          "web" : "https://github.com/Altreus/Dist-Zilla-Plugin-CPAN-Mini-Inject-REST"
       }
    },
-   "version" : "0.003",
+   "version" : "0.004",
    "x_contributors" : [
       "Alastair McGowan-Douglas <alastair.mcgowan@opusvl.com>",
       "Colin Newell <colin@opusvl.com>"
