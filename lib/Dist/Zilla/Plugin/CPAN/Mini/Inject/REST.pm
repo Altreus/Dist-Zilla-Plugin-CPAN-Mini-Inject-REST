@@ -23,8 +23,18 @@ sub release {
         # this leaves us in an awkward state as we can't re-upload it
         # and we need this step to pass to get the rest of the release
         # tasks accomplished.
+        # NOTE: this often a 504 because the timeouts on the frontend
+        # nginx are too low.  Since the server does the whole indexing
+        # during the processing of the REST call itself this can take a
+        # while.
         $self->log("Pretending we succesfully uploaded $archive");
         return;
+    }
+    if($self->host =~ qr|//|)
+    {
+        # stop a common goof that was being reported as a 500.
+        # despite not actually reaching a server.
+        $self->log_fatal(sprintf "host looks like a url (%s), please change it to a hostname.", $self->host);
     }
     $self->log_debug(sprintf "Sending %s to %s://%s:%d", $archive, $self->protocol, $self->host, $self->port);
 
